@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-createDreamTeam=a=>Array.isArray(a)?a.filter(e=>typeof(e)=='string').map(e=>e.trim().slice(0,1).toUpperCase().sort().join('')):false
+createDreamTeam=a=>Array.isArray(a)?a.filter(e=>typeof(e)=='string').map(e=>e.trim().slice(0,1).toUpperCase()).sort().join(''):false
 module.exports = {
   createDreamTeam
 };
