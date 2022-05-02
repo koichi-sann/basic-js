@@ -11,17 +11,8 @@ const { NotImplementedError } = require('../extensions/index.js')
  * For n = 152, the output should be 52
  *
  */
-deleteDigit=(n,a=String(n).split(''))=>{
-  b=a.slice()
-  c=a.slice()
-  m1=String(Math.min(...a))
-  i1=a.indexOf(m1)
-  b.splice(i1, 1)
-  m2=String(Math.min(...b))
-  i2=a.indexOf(m2)
-  c.splice(i2, 1)
-  return +b.join('')>+c.join('')?+b.join(''):+c.join('')
-}
+deleteDigit=(n,a=String(n))=>Math.max(...a.split('').map((_,i)=>a.slice(0,i)+a.slice(i+1)))
+
 module.exports = {
   deleteDigit
-};
+}
